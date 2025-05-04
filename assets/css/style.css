@@ -1,0 +1,267 @@
+/* Task Manager - Main Stylesheet */
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 48px 0 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Header & Navigation */
+.navbar-brand {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, .25);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .navbar-toggler {
+    top: .25rem;
+    right: 1rem;
+}
+
+.navbar .form-control {
+    padding: .75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #333;
+}
+
+.nav-link .feather {
+    margin-right: 4px;
+    color: #727272;
+}
+
+.nav-link.active {
+    color: #2470dc;
+}
+
+.nav-link:hover .feather,
+.nav-link.active .feather {
+    color: inherit;
+}
+
+/* Task Cards & Lists */
+.task-card {
+    border-left: 4px solid #e9ecef;
+    transition: transform 0.2s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-card.priority-high {
+    border-left-color: #dc3545;
+}
+
+.task-card.priority-medium {
+    border-left-color: #ffc107;
+}
+
+.task-card.priority-low {
+    border-left-color: #17a2b8;
+}
+
+.task-title {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.task-title:hover {
+    color: #0d6efd;
+    text-decoration: underline;
+}
+
+/* Status Badges */
+.status-badge {
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.priority-badge {
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Category Labels */
+.category-label {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: white;
+    text-transform: capitalize;
+}
+
+/* Date indicators */
+.due-date {
+    font-size: 0.85rem;
+}
+
+.overdue {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+.due-today {
+    color: #ffc107;
+    font-weight: 500;
+}
+
+/* Dashboard Widgets */
+.status-widget {
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.status-widget h3 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.status-widget p {
+    margin: 5px 0 0;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.widget-pending {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+
+.widget-progress {
+    background-color: #cff4fc;
+    color: #055160;
+}
+
+.widget-completed {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+/* Forms */
+.form-label {
+    font-weight: 500;
+}
+
+.color-preview {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 1px solid #dee2e6;
+}
+
+/* Login/Register Forms */
+.form-auth {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-auth .form-floating:focus-within {
+    z-index: 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .sidebar {
+        top: 5rem;
+    }
+}
+
+/* Animation for UI feedback */
+.animate-fade-in {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Category pills in task list */
+.category-pill {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: white;
+}
+
+/* Due date indicators */
+.date-indicator {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.date-indicator .feather {
+    margin-right: 4px;
+    width: 14px;
+    height: 14px;
+}
+
+/* Task actions */
+.action-icons .feather {
+    width: 18px;
+    height: 18px;
+}
+
+/* Empty state styling */
+.empty-state {
+    text-align: center;
+    padding: 2rem;
+    color: #6c757d;
+}
+
+.empty-state .feather {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    color: #adb5bd;
+}
+
+/* Table Enhancements */
+.table > :not(caption) > * > * {
+    padding: 0.75rem 1rem;
+}
